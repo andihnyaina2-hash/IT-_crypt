@@ -21,7 +21,7 @@ Debut_fonction
 	FAIRE
 		POUR j <- 0,j<8,pas de j :1
 		FAIRE 
-			SI t[i] != 'a'|| t[i] != 'e'||t[i] != 'i'||t[i]!='u'||t[i]!='o'||t[i]!='y' && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y')
+			SI t[i] != 'a'|| t[i] != 'e'||t[i] != 'i'||t[i]!='u'||t[i]!='o'||t[i]!='y'|| t[i]!=' ' && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y')
 		       		ALORS
 					numCHAR <-numCHAR + 2
 					POUR k <- numCHAR ;k>i, pas de k allant de -1
@@ -68,7 +68,7 @@ void ITing(char *t)
 	numCHAR=i++;
 	for(i=0;i<=numCHAR;i++)
 	{
-		if((t[i]!='a' || t[i]!='e' || t[i] != 'i'|| t[i]!='u'|| t[i]!='o'|| t[i]!='y') && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y'))
+i		if((t[i]!='a' || t[i]!='e' || t[i] != 'i'|| t[i]!='u'|| t[i]!='o'|| t[i]!='y' || t[i] != ' ' ) && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y'))
 		{	
 			
 					
