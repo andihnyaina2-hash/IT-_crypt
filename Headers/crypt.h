@@ -1,3 +1,3 @@
-//void aLLoc(char *t);
+int vowel(char caract);
 void entering(char *t);
 void ITing(char *t);

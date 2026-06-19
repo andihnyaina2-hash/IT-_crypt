@@ -1,6 +1,17 @@
 /*ALGORIHTME*/
 /*
 FONCTION:
+entier vowel(*t:caractere)* *t est n pointeur
+Debut_fonction
+	truth
+	SI *t='a' || *t='e' || *t='u' || *t='i' || *t='y' || *t='o'
+		ALORS
+			truth<-1
+	SINON
+			truth<-0
+	FINSI
+	retourner(truth)
+Fin_fonction
 
 vide entering(t[]:chaine de caractere)
 Debut_fonction
@@ -21,8 +32,8 @@ Debut_fonction
 	FAIRE
 		POUR j <- 0,j<8,pas de j :1
 		FAIRE 
-			SI t[i] != 'a'|| t[i] != 'e'||t[i] != 'i'||t[i]!='u'||t[i]!='o'||t[i]!='y'|| t[i]!=' ' && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y')
-		       		ALORS
+		    SI vowel(t[i])=0 && vowel(t[i+1])=1
+				ALORS
 					numCHAR <-numCHAR + 2
 					POUR k <- numCHAR ;k>i, pas de k allant de -1
 					FAIRE
@@ -50,7 +61,20 @@ Fin
 */
 #include <stdio.h>
 #include "../Headers/crypt.h"
-
+int vowel(char caract)
+{
+	int truth;
+	if(caract =='a'|| caract =='e' || caract == 'y' || caract== 'u'|| caract == 'i' || caract == 'o'|| 
+		caract == 'A'|| caract == 'E' || caract == 'Y' || caract == 'U' || caract == 'I' || caract == 'O')
+	{
+		truth=1;
+	}
+	else
+	{
+		truth=0;
+	}
+	return truth;
+}
 void entering(char *t)
 {
 	printf("put here the sentences that u wanna crypt : ");
@@ -68,7 +92,7 @@ void ITing(char *t)
 	numCHAR=i++;
 	for(i=0;i<=numCHAR;i++)
 	{
-	if((t[i]!='a' || t[i]!='e' || t[i] != 'i'|| t[i]!='u'|| t[i]!='o'|| t[i]!='y' || t[i] !=' ') && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y'))
+	if((vowel(t[i])==0) && (vowel(t[i+1]))==1)
 		{			
 			numCHAR=numCHAR+2;
 			for(k=numCHAR;k>i;k=k-1)
