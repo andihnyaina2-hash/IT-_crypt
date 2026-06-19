@@ -30,7 +30,7 @@ Debut_fonction
 					FINPOUR
 					t[i+1]<- 'I'
 					numCHAR <- numCHAR + 2
-					POUR k <- numCHAR ;k>i, pas de k allant de -1
+					POUR k <- numCHAR ;k>i+1, pas de k allant de -1
 					FAIRE
 						t[k]<-t[k-1]
 					FINPOUR
