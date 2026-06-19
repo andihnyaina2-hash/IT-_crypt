@@ -13,10 +13,6 @@ Debut_fonction
 	i,j,k,numCHAR:entier
 	tmp,tmp1:caractere
 	i <-0
-	v[8]:chaine de caractere
-	v[8]<-{'a','e','i','u','o','y'}
-	cuns[19]<-{'q','w','r','t','p','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'}
-	TantQue t[i] != '\0'
 	FAIRE
 		i <- i+1
 	FIN
@@ -25,22 +21,25 @@ Debut_fonction
 	FAIRE
 		POUR j <- 0,j<8,pas de j :1
 		FAIRE 
-			SI t[i] != 'a'|| t[i] != 'e'||t[i] != 'i'||t[i]!='u'||t[i]!='o'||t[i]!='y' && t[i+1]!=v[j]
+			SI t[i] != 'a'|| t[i] != 'e'||t[i] != 'i'||t[i]!='u'||t[i]!='o'||t[i]!='y' && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y')
 		       		ALORS
-					tmp <- t[i+1]
-					tmp1 <- t[i+2]
-					t[i+1] <- 'I' 
-					t[i+2] <- 'T'
-					POUR k <- numchar +2  ;k>=i+3, pas de k allant de -1
+					numCHAR <-numCHAR + 2
+					POUR k <- numCHAR ;k>i, pas de k allant de -1
 					FAIRE
-						t[k]<-t[k-2]
+						t[k]<-t[k-1]
 					FINPOUR
-					t[i+3]=tmp
-					t[i+4]=tmp1
+					t[i+1]<- 'I'
+					numCHAR <- numCHAR + 2
+					POUR k <- numCHAR ;k>i, pas de k allant de -1
+					FAIRE
+						t[k]<-t[k-1]
+					FINPOUR
+					t[i+2]<- 'T'
+					i <- i+3
 			FINSI
 		FINPOUR
 	FINPOUR
-	AFFICHER ("crypted\n",t)
+	AFFICHER ("crypted :",t)
 Fin_fonction
 Debut
 	sentences[100]:chaine de caractere
@@ -80,11 +79,11 @@ void ITing(char *t)
 			}
 			t[i+1]='I';
 			numCHAR=numCHAR+2;
-                        for(k=numCHAR;k>i+1;k=k-1)
-                        {       
-                                t[k]=t[k-1];
-                        }       
-                        t[i+2]='T';
+            for(k=numCHAR;k>i+1;k=k-1)
+            {     
+				t[k]=t[k-1];
+            }       
+            t[i+2]='T';
 			i=i+3;
 		}
 	}
