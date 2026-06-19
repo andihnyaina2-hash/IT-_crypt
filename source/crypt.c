@@ -68,10 +68,8 @@ void ITing(char *t)
 	numCHAR=i++;
 	for(i=0;i<=numCHAR;i++)
 	{
-i		if((t[i]!='a' || t[i]!='e' || t[i] != 'i'|| t[i]!='u'|| t[i]!='o'|| t[i]!='y' || t[i] != ' ' ) && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y'))
-		{	
-			
-					
+	if((t[i]!='a' || t[i]!='e' || t[i] != 'i'|| t[i]!='u'|| t[i]!='o'|| t[i]!='y' || t[i] !=' ') && (t[i+1]=='a' || t[i+1] == 'e' || t[i+1] == 'i'|| t[i+1]=='u'|| t[i+1]=='o'|| t[i+1] =='y'))
+		{			
 			numCHAR=numCHAR+2;
 			for(k=numCHAR;k>i;k=k-1)
 			{
