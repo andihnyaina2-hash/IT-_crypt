@@ -1,10 +1,11 @@
 /*ALGORIHTME*/
 /*
 FONCTION:
-entier vowel(*t:caractere)* *t est n pointeur
+entier vowel(t:caractere)
 Debut_fonction
 	truth
-	SI *t='a' || *t='e' || *t='u' || *t='i' || *t='y' || *t='o'
+	SI t='a' || t='e' || t='u' || t='i' || t='y' || t='o' ||
+	   t='A' || t='E' || t='U' || t= 'I' || t= 'Y' || t= 'O'
 		ALORS
 			truth<-1
 	SINON
@@ -34,8 +35,8 @@ Debut_fonction
 		FAIRE 
 		    SI vowel(t[i])=0 && vowel(t[i+1])=1
 				ALORS
-					numCHAR <-numCHAR + 2
-					POUR k <- numCHAR ;k>i, pas de k allant de -1
+i					numCHAR <-numCHAR + 2
+					POUR k <- numCHAR ;k>i, pas de k allant de -1 *shifting  character to the right*
 					FAIRE
 						t[k]<-t[k-1]
 					FINPOUR
@@ -60,8 +61,8 @@ Fin
 
 */
 #include <stdio.h>
-#include "../Headers/crypt.h"
-int vowel(char caract)
+#include "../headers/crypt.h"
+int vowel_test(char caract)
 {
 	int truth;
 	if(caract =='a'|| caract =='e' || caract == 'y' || caract== 'u'|| caract == 'i' || caract == 'o'|| 
@@ -69,9 +70,13 @@ int vowel(char caract)
 	{
 		truth=1;
 	}
-	else
+	else if(caract != ' ')
 	{
 		truth=0;
+	}
+	else
+	{
+		truth=2;
 	}
 	return truth;
 }
@@ -92,7 +97,7 @@ void ITing(char *t)
 	numCHAR=i++;
 	for(i=0;i<=numCHAR;i++)
 	{
-	if((vowel(t[i])==0) && (vowel(t[i+1]))==1)
+		if((vowel_test(t[i])==0) && (vowel_test(t[i+1]))==1)
 		{			
 			numCHAR=numCHAR+2;
 			for(k=numCHAR;k>i;k=k-1)
