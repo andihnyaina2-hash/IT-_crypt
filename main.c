@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "Headers/crypt.h"
+#include "headers/crypt.h"
+#include "headers/decrypt.h"
+#include <string.h>
 
-int main()
+int main(int argc,char *argv[])
 {
-	char sentences[100];
-	entering(sentences);
-	ITing(sentences);
+	menu(argc,argv);
 	return(0);
 }
